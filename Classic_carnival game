@@ -1,0 +1,38 @@
+#A Traditional Carnival game
+
+from random import shuffle # importing shuffle method, from random lib, it will shuffle the list randomly
+
+
+
+def shuffle_list(my_list):
+    # here take my_list and return shuffled version of that list!
+    shuffle(my_list)
+    return my_list
+
+shuffle_list(my_list)
+def player_guess():
+    
+    guess= '' # positional argument
+    while guess not in ['0','1','2']: 
+        guess = input("Pick a number: 0,1 or 2: ")
+    
+    return int(guess) # changing to an integer
+    
+my_index = player_guess() 
+def check_guess(my_list,guess):
+    if my_list[guess] == 'O':
+        print('Corrrect Guess buddy')
+        
+    else:
+        print('wrong guess try again')
+        print(my_list)
+        
+# Interactive Functions
+
+my_list = ['','O','']
+
+mixedup_list = shuffle_list(my_list)
+
+guess = player_guess()
+
+check_guess(mixedup_list,guess)
